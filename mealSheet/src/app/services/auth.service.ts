@@ -17,12 +17,11 @@ export class AuthService {
 //       password
 //     }, httpOptions);
 //   }
-  register(username: string, email: string, password: string, password2: string): Observable<any> {
-    return this.http.post(AUTH_API + 'register', {
+  register(username: string, email: string, password: string): Observable<any> {
+    return this.http.post(AUTH_API + 'register/', {
       username,
       email,
-      password,
-      password2
+      password
     }, httpOptions);
   }
 }

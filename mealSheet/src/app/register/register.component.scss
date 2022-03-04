@@ -1,0 +1,21 @@
+:host {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .wrapper-form {
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wrapper-button {
+    margin-left: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
