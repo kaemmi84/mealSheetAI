@@ -1,18 +1,36 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { OAuthModule } from 'angular-oauth2-oidc';
 import { AppComponent } from './app.component';
+import { UserService } from './services/user.service';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    OAuthModule.forRoot({
+          resourceServer: {
+            sendAccessToken: true,
+            allowedUrls: ['http://localhost:8000']
+          }
+        }),
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
