@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu'
 
 @NgModule({
   declarations: [
@@ -36,12 +37,13 @@ import {MatButtonModule} from '@angular/material/button';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatMenuModule,
     OAuthModule.forRoot({
-          resourceServer: {
-            sendAccessToken: true,
-            allowedUrls: ['http://localhost:8000']
-          }
-        }),
+      resourceServer: {
+        sendAccessToken: true,
+        allowedUrls: ['http://localhost:8000']
+      }
+    }),
     BrowserAnimationsModule,
   ],
   bootstrap: [AppComponent]

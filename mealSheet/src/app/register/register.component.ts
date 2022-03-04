@@ -12,7 +12,6 @@ export class RegisterComponent implements OnInit {
     userName: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required]],
-    password2: ['', [Validators.required]],
   });
   hidePassword = true;
 

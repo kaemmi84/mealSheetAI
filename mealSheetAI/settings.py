@@ -61,11 +61,6 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:4200',
 )
 
-SIMPLE_JWT = {
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=15),
-    'ROTATE_REFRESH_TOKENS': True,
-}
-
 ROOT_URLCONF = 'mealSheetAI.urls'
 
 TEMPLATES = [
@@ -133,7 +128,6 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL='auth.User'
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
