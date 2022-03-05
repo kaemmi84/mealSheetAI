@@ -11,6 +11,11 @@ class MealSerializer(serializers.ModelSerializer):
         model = Meal
         fields = ("id", "description", "owner", "updated", "picture")
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ("id", "username", "email")
+
 class RegisterSerilizer(serializers.ModelSerializer):
     class Meta:
         model = User

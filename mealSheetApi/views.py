@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Meal
-from .serializers import MealSerializer, RegisterSerilizer
+from .serializers import MealSerializer, RegisterSerilizer, UserSerializer
 from django.contrib.auth.models import User
 from rest_framework.permissions import IsAuthenticated
 
@@ -17,3 +17,9 @@ class RegisterView(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = RegisterSerilizer
     http_method_names = ['post']
+
+class UserView(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated]
+    
