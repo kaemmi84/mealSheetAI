@@ -1,12 +1,25 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>Meal Sheet</span>
-</mat-toolbar>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item routerLink="/register">Register</button>
-  <button mat-menu-item routerLink="/login">Login</button>
-  <button mat-menu-item routerLink="/home">Sheet</button>
-</mat-menu>
-<router-outlet></router-outlet>
+<div class="wrapper-main">
+  <div class="header">
+    <mat-toolbar color="primary">
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Meal Sheet</span>
+      <span class="spacer"></span>
+      <button mat-icon-button routerLink="/login" *ngIf="!oauthService.hasValidAccessToken()">
+        <mat-icon aria-hidden="false" aria-label="login icon">login</mat-icon>
+      </button>
+      <button mat-icon-button (click)="logout()" *ngIf="oauthService.hasValidAccessToken()">
+        <mat-icon aria-hidden="false" aria-label="logout icon">logout</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/home">Overview</button>
+        <button mat-menu-item routerLink="/editor">Editor</button>
+      </mat-menu>
+    </mat-toolbar>
+  </div>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

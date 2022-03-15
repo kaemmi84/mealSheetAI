@@ -16,7 +16,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-import {MatMenuModule} from '@angular/material/menu'
+import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
+import { EditorComponent } from './editor/editor.component';
+import { DaytimeIconPipe } from './daytime-icon.pipe';
+import { MealEntryComponent } from './editor/meal-entry/meal-entry.component'
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatNativeDateModule} from "@angular/material/core";
+import { TextMaskModule } from 'angular2-text-mask';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -24,7 +34,10 @@ import {MatMenuModule} from '@angular/material/menu'
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditorComponent,
+    DaytimeIconPipe,
+    MealEntryComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +51,12 @@ import {MatMenuModule} from '@angular/material/menu'
     MatInputModule,
     MatButtonModule,
     MatMenuModule,
+    MatCardModule,
+    MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatExpansionModule,
+    TextMaskModule,
     OAuthModule.forRoot({
       resourceServer: {
         sendAccessToken: true,
@@ -45,6 +64,7 @@ import {MatMenuModule} from '@angular/material/menu'
       }
     }),
     BrowserAnimationsModule,
+    FontAwesomeModule,
   ],
   bootstrap: [AppComponent]
 })

@@ -10,9 +10,12 @@ import { authConfig } from './services/auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private oauthService: OAuthService) {
+  constructor(public oauthService: OAuthService) {
     this.oauthService.configure(authConfig);
-    this.oauthService.loadDiscoveryDocumentAndTryLogin();
     this.oauthService.setupAutomaticSilentRefresh();
+  }
+
+  logout() {
+    this.oauthService.logOut();
   }
 }
