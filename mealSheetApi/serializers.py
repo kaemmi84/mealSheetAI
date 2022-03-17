@@ -4,17 +4,20 @@ from django.contrib.auth.models import User
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth.password_validation import validate_password
 
+
 class MealSerializer(serializers.ModelSerializer):
     owner = serializers.HiddenField(default=serializers.CurrentUserDefault())
 
     class Meta:
         model = Meal
-        fields = ("id", "description", "owner", "updated", "picture")
+        fields = ("id", "description", "mealTime", "owner", "mealTimestamp", "picture")
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ("id", "username", "email")
+
 
 class RegisterSerilizer(serializers.ModelSerializer):
     class Meta:

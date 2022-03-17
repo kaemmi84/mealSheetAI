@@ -1,9 +1,9 @@
 <div class="wrapper-meal">
-  <div class="wrapper-description">
+  <div class="wrapper-description" [formGroup]="mealForm">
     <fa-icon [icon]="icon" size="3x"></fa-icon>
     <mat-form-field appearance="fill">
       <mat-label>{{mealText}}</mat-label>
-      <textarea matInput></textarea>
+      <textarea matInput formControlName="description"></textarea>
     </mat-form-field>
     <button mat-icon-button (click)="toggleDetails()">
       <mat-icon *ngIf="!expanded">expand_more</mat-icon>

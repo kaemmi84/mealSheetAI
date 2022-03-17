@@ -1,24 +1,24 @@
 <div class="wrapper-home">
     <h1 *ngIf="!oauthService.hasValidAccessToken()">Please Login</h1>
     <div class="wrapper-dashboard" *ngIf="oauthService.hasValidAccessToken()">
-        <mat-card class="example-card" *ngFor="let meal of meals">
-            <mat-card-header>
-              <mat-card-title>{{ meal.description }}</mat-card-title>
-              <mat-card-subtitle> {{meal.updated | date }}</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image src="{{meal.picture}}" [alt]="meal.description">
-            <mat-card-content>
-              <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button>LIKE</button>
-              <button mat-button>SHARE</button>
-            </mat-card-actions>
-          </mat-card>
+<!--        <mat-card class="example-card" *ngFor="let meal of meals">-->
+<!--            <mat-card-header>-->
+<!--              <mat-card-title>{{ meal.description }}</mat-card-title>-->
+<!--              <mat-card-subtitle> {{meal.updated | date }}</mat-card-subtitle>-->
+<!--            </mat-card-header>-->
+<!--            <img mat-card-image src="{{meal.picture}}" [alt]="meal.description">-->
+<!--            <mat-card-content>-->
+<!--              <p>-->
+<!--                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.-->
+<!--                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally-->
+<!--                bred for hunting.-->
+<!--              </p>-->
+<!--            </mat-card-content>-->
+<!--            <mat-card-actions>-->
+<!--              <button mat-button>LIKE</button>-->
+<!--              <button mat-button>SHARE</button>-->
+<!--            </mat-card-actions>-->
+<!--          </mat-card>-->
     </div>
 </div>
 

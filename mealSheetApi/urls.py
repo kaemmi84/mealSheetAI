@@ -8,5 +8,5 @@ router.register("users", UserView, basename="UserViewRoute")
 router.register("register", RegisterView, basename="RegisterViewRoute")
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('', include(router.urls))
 ]

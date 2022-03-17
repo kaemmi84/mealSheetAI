@@ -10,6 +10,9 @@
   <div class="wrapper-meals">
     <app-meal-entry
       *ngFor="let meal of meals"
+      [chosenDate]="mealDateForm.get('mealDate')?.value"
+      [id]="meal?.id"
+      [description]="meal?.description"
       [mealTime]="meal.mealTime"
       ></app-meal-entry>
   </div>
